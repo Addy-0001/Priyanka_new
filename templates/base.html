@@ -1,0 +1,34 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>
+      {% block title %}
+        Priyanka's Blog
+      {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{% static 'css/sitewide.css' %}" />
+    {% block style %}
+
+    {% endblock %}
+    <link rel="shortcut icon" href="{% static 'icons/favicon.ico' %}" type="image/x-icon" />
+  </head>
+  <body>
+    <nav id="main-navigation">
+      <div>
+        <a href="{% url 'blog-home' %}">Priyanka Neupane</a>
+      </div>
+      <div>
+        <a href="{% url 'blog-home' %}">Home</a>
+        &nbsp;&nbsp;&nbsp;
+        <a href="{% url 'blog-posts' %}">All Posts</a>
+      </div>
+    </nav>
+    {% block content %}
+
+    {% endblock %}
+  </body>
+</html>

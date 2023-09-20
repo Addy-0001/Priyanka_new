@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}
+Priyanka | Home
+{% endblock %}
+
+{% block style %}
+<link rel="stylesheet" href="{% static 'blog/index.css' %}">
+<link rel="stylesheet" href="{% static 'blog/post.css' %}">
+{% endblock %}
+
+{% block content %}
+<section id="welcome">
+    <header style="color: white;">
+        <img src="{% static 'blog/images/priyanka-face.jpeg' %}" alt="Priyanka - Author" />
+        <h1>Priyanka's Blog</h1>
+    </header>
+    <p>“Sensitive soul with a creative mind.”- This is how my friends define me, and I 
+        won’t deny it. When I was a 6th grader, 
+        I read newspapers and found immense respect for those writers who covered different areas of society and jotted down their opinions on a piece of 
+        paper.</p>
+</section>
+
+<section id="latest-posts">
+    <h2>My Latest Posts</h2>
+    <ul>
+        {% for post in latest_posts %}
+        {% include 'blog/includes/post.html' %}
+        {% endfor %}
+    </ul>
+</section>
+
+<section id="about">
+    <h2>What I do</h2>
+    <p>I enjoy exploring and travelling.</p>
+    <p>My goal is to keep on growing. I am a consistent learner pursuing a bachelor's degree at Bachelor of Business Administration (BBA). From travelling to rural areas of Nepal to reading ancient history, or to debating with a bunch of people, I have always considered myself 
+        to be an active learner with constant mood swings.</p>
+</section>
+
+{% endblock %}
